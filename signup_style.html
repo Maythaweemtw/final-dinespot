@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+    
+    :root{
+      --accent-color: #f0c85a;
+      --base-color: white;
+      --text-color: #2E2B41;
+      --input-color: #F3F0FF;
+    }
+
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html{
+      font-family: Poppins, Segoe UI, sans-serif;
+      font-size: 12pt;
+      color: var(--text-color);
+      text-align: center;
+    }
+
+    body{
+        display: flex;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .wrapper {
+        box-sizing: border-box;
+        background-color: var(--base-color);
+        width: 40%;
+        min-width: 400px;
+        padding: 10px;
+        border-radius: 0 20px 20px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .image-container {
+        flex: 1;
+        background-image: url('background1.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+
+    h1{
+      font-size: 3rem;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    form{
+      width: min(400px, 100%);
+      margin-top: 20px;
+      margin-bottom: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    form > div{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    form label{
+      flex-shrink: 0;
+      height: 50px;
+      width: 50px;
+      background-color: var(--accent-color);
+      color: var(--base-color);
+      border-radius: 10px 0 0 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+
+    form input, form select{
+      flex-grow: 1;
+      height: 50px;
+      padding: 1em;
+      font: inherit;
+      border-radius: 0 10px 10px 0;
+      border: 2px solid var(--input-color);
+      border-left: none;
+      background-color: var(--input-color);
+      transition: 150ms ease;
+    }
+
+    form button{
+      margin-top: 10px;
+      border: none;
+      border-radius: 1000px;
+      padding: .85em 4em;
+      background-color: var(--accent-color);
+      color: var(--base-color);
+      font: inherit;
+      font-weight: 600;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: 150ms ease;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <h1>Dine Spot</h1>
+    <h2>Signup</h2>
+    <form id="form" action="register.php" method="post">
+      <div>
+        <label for="firstname-input">👤</label>
+        <input type="text" name="firstname" id="firstname-input" placeholder="Firstname">
+      </div>
+      <div>
+        <label for="email-input">@</label>
+        <input type="email" name="email" id="email-input" placeholder="Email">
+      </div>
+      <div>
+        <label for="password-input">🔒</label>
+        <input type="password" name="password" id="password-input" placeholder="Password">
+      </div>
+      <div>
+        <label for="repeat-password-input">🔒</label>
+        <input type="password" name="repeat-password" id="repeat-password-input" placeholder="Repeat Password">
+      </div>
+      <div>
+        <label for="age-input">🎂</label>
+        <select name="age" id="age-input">
+          <option value="">Select Age</option>
+          <script>
+            for (let i = 1; i <= 100; i++) {
+              document.write(`<option value="${i}">${i}</option>`);
+            }
+          </script>
+        </select>
+      </div>
+      <div>
+        <label for="meal-cost-input">🍽️</label>
+        <select name="mealcost" id="meal-cost-input">
+          <option value="">Select Meal Cost</option>
+          <option value="1">Less than 100</option>
+          <option value="2">100-500</option>
+          <option value="3">500-1000</option>
+          <option value="4">1000-1500</option>
+          <option value="5">More than 1500</option>
+        </select>
+      </div>
+      <button type="submit">Signup</button>
+    </form>
+    <p>Already have an Account? <a href="login_style.html">login</a></p>
+  </div>
+  <div class="image-container"></div>
+</body>
+</html>
